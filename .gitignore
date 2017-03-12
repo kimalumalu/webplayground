@@ -1,4 +1,5 @@
 # Build and Release Folders
+nbproject/
 bin/
 bin-debug/
 bin-release/
