@@ -1,3 +1,3 @@
 <?php
-  echo '<h1>willkommen im web playground word press playground</h1>';
+  echo '<h1>willkommen im WordPress playground</h1>';
 ?>

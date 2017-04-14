@@ -1,3 +1,3 @@
 <?php
-  echo '<h1>willkommen im web playground joomla playground</h1>';
+  echo '<h1>willkommen im joomla playground</h1>';
 ?>
