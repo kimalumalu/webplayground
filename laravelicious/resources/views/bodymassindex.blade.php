@@ -13,11 +13,11 @@
     </div>
     <div style="margin-bottom:10px">
         {{ Form::label('heigth', 'Height(m):')}}
-        {{ Form::text('hoehe') }}
+        {{ Form::text('hoehe','1.70') }}
     </div>
     <div style="margin-bottom:10px">
         {{ Form::label('weigth', 'Weight(kg):')}}
-        {{ Form::text('gewicht') }}
+        {{ Form::text('gewicht','70.5') }}
     </div>
     {{ Form::submit('calculate')}}
     {{ Form::close() }}
