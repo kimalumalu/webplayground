@@ -1,14 +1,15 @@
 version: '2'
 services:
     web:
-      hostname: dockerplayground.lan
       image: tutum/lamp
       volumes:
         - .:/var/www/html
       ports:
           - "8080:80"
-          - "8081:8000"
-
+    spring:
+      build: ./springylicious/bodymassindex
+      ports:
+          - "8081:8080"     
            
 
             
