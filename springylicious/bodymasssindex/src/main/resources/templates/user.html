@@ -1,0 +1,20 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Body Mass Index Calculator</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<h1>Body Mass Index Calculator</h1>
+    <form action="#" th:action="@{/report}" th:object="${user}" method="post">
+        <p>Gender:<select th:field="*{gender}">
+             <option value="MALE">Male</option>
+             <option value="FEMALE">Female</option>
+        </select></p>
+    	<p>Age: <input type="text" th:field="*{age}" /></p>
+        <p>Height(m): <input type="text" th:field="*{height}" /></p>
+        <p>Weight(Kg): <input type="text" th:field="*{weight}" /></p>
+        <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
+    </form>
+</body>
+</html>

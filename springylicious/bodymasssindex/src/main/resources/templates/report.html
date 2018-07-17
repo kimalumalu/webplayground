@@ -1,0 +1,16 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Body Mass Index Calculator</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<h1>Body Mass Index Calculator</h1>
+    <p th:text="'Current Body Mass Index: ' + ${report.currentBodyMassIndex}" />
+    <p th:text="'Ideal Body Mass Index: ' + ${report.idealBodyMassIndex}" />
+    <p th:text="'Current Weight: ' + ${report.currentWeight} + 'Kg'"/>
+    <p th:text="'Ideal Weight: ' + ${report.idealWeight} + 'Kg'" />
+    <p th:text="'Weight to lose: ' + ${report.weightToLose} + 'Kg'" />
+    <a href="/bodymassindex">calculate your body mass index once again</a>
+</body>
+</html>
