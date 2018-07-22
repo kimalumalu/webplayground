@@ -1,6 +1,14 @@
 package bodymassindex;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name="bmi_report")
 public class Report {
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	private int id;
+	
 	private int currentBodyMassIndex;
 	private double currentWeight;
 	private int idealBodyMassIndex;
