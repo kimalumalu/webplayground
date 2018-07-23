@@ -7,7 +7,9 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
-public class BodyMassIndexController {
+public class BodyMassIndexController {	
+    @Autowired
+    private ReportRepository reportRepository;
 
     @GetMapping("/bodymassindex")
     public String BodyMassIndexForm(Model model) {
@@ -18,7 +20,11 @@ public class BodyMassIndexController {
     @PostMapping("/report")
     public String greetingSubmit(@ModelAttribute User user, Model model) throws InvalidUserDataException {
     	Calculator calculator = new Calculator(user);
-    	model.addAttribute("report", calculator.getReport());
+    	Report report = calculator.getReport();
+    	
+    	reportRepository.save(report);
+    	model.addAttribute("report", report);
+    	
         return "report";
     }
 }
