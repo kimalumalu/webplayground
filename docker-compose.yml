@@ -1,8 +1,7 @@
-version: '2'
+version: '3'
 services:
     postgres:
       image: postgres
-      container_name: webplayground_postgresdb
       restart: always
       volumes:
          - ./config:/var/config
@@ -14,23 +13,21 @@ services:
     laravel:
       image: tutum/lamp
       volumes:
-        - .:/var/www/html
+         - .:/var/www/html
       ports:
-          - "8080:80"            
+         - "8080:80"            
     spring:
       build: ./springylicious/bodymassindex
-      depends_on:
-          - postgres
+      links:
+         - "postgres:postgresdb"
       ports:
-          - "8081:8080"
+         - "8081:8080"
                         
     adminer:
       image: adminer
-      depends_on:
-          - postgres
+      links:
+         - "postgres:postgresdb"
       restart: always
       ports:
-         - "8082:8080"       
+         - "8082:8080"
            
-
-            
