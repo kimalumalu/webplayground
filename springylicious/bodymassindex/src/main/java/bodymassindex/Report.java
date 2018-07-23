@@ -1,13 +1,30 @@
 package bodymassindex;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name="bmi_report")
 public class Report {
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	private Long id;
+	
+	@Column(name="current_body_mass_index")
 	private int currentBodyMassIndex;
+	
+	@Column(name="current_weight")
 	private double currentWeight;
+	
+	@Column(name="ideal_body_mass_index")
 	private int idealBodyMassIndex;
+	
+	@Column(name="ideal_weight")
 	private int idealWeight;
+	
+	@Column(name="weight_to_lose")
 	private int weightToLose;
 	
-	public Report() {
+	protected Report() {
 		
 	}
 	
