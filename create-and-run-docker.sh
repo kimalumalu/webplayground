@@ -1,7 +1,10 @@
+#!/usr/bin/env bash
 echo "starting web playground"
 echo "initializing laravel environment"
 echo "change to laravelicious folder"
 cd laravelicious
+echo "set up laravel environment file"
+cp .env.example .env
 echo "initialize laravel dependencies with composer"
 composer install
 echo "set up laravel configurations"
