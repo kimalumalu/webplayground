@@ -9,7 +9,7 @@ services:
           POSTGRES_DB: webplayground
                
     laravel:
-      image: tutum/lamp
+      build: ./laravelicious
       volumes:
          - .:/var/www/html
       ports:
