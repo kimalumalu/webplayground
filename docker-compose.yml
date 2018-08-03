@@ -7,13 +7,18 @@ services:
           POSTGRES_USER: webapplication
           POSTGRES_PASSWORD: webapplication
           POSTGRES_DB: webplayground
-               
+    web:
+      image: tutum/lamp
+      volumes:
+        - .:/var/www/html
+      ports:
+        - "8080:80"
+
     laravel:
       build: ./laravelicious
-      volumes:
-         - .:/var/www/html
       ports:
-         - "8080:80"            
+        - "8000:8000"
+
     spring:
       build: ./springylicious/bodymassindex
       links:
