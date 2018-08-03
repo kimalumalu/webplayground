@@ -2,6 +2,7 @@ version: '3'
 services:
     postgres:
       image: postgres
+      container_name: webplayground_postgresdb
       restart: always
       environment:
           POSTGRES_USER: webapplication
@@ -23,6 +24,8 @@ services:
 
     spring:
       build: ./springylicious/bodymassindex
+      volumes:
+        - ./springylicious/bodymassindex:/var/www/html
       links:
          - "postgres:postgresdb"
       ports:
