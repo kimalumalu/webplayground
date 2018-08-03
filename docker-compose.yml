@@ -16,6 +16,8 @@ services:
 
     laravel:
       build: ./laravelicious
+      volumes:
+        - ./laravelicious:/var/www/html
       ports:
         - "8000:8000"
 
