@@ -12,6 +12,6 @@ RUN echo 'deb http://ppa.launchpad.net/webupd8team/java/ubuntu trusty main' > /e
 RUN apt-cache search maven && apt-get install -y maven    
 
 ADD . /var/www/html
+RUN cd /var/www/html && mvn clean install
 WORKDIR /var/www/html
-RUN mvn clean install
 ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","target/BodymassIndexCalculator-0.0.1.jar"]

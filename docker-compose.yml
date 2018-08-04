@@ -17,15 +17,11 @@ services:
 
     laravel:
       build: ./laravelicious
-      volumes:
-        - ./laravelicious:/var/www/html
       ports:
-        - "8000:8000"
+         - "8000:8000"
 
     spring:
       build: ./springylicious/bodymassindex
-      volumes:
-        - ./springylicious/bodymassindex:/var/www/html
       links:
          - "postgres:postgresdb"
       ports:
