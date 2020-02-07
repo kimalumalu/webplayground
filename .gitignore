@@ -1,3 +1,5 @@
+# IDE folders
+.idea/
 # Build and Release Folders
 nbproject/
 bin/
